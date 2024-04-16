@@ -13,6 +13,7 @@ import org.springframework.web.servlet.view.RedirectView;
  */
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("url")
 public class Controller {
     private final Service service;
     @GetMapping("")
