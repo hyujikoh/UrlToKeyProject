@@ -37,7 +37,7 @@ class ShortUrlProjectApplicationTests {
     @Test
     @DisplayName("서버 테스트")
     public void serverHealthCheck() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("http://localhost:8080/")
+        mockMvc.perform(MockMvcRequestBuilders.get("http://localhost:8080/url")
                         .characterEncoding("UTF-8")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
@@ -52,7 +52,7 @@ class ShortUrlProjectApplicationTests {
         String url = "https://youtube.com";
 
         //then
-        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("http://localhost:"+port+"/shortUrl")
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("http://localhost:"+port+"/url/shortUrl")
                         .contentType(MediaType.APPLICATION_JSON)
                         .param("url", url) // URL을 쿼리 파라미터로 전달
                 ).andExpect(status().isOk())
@@ -71,7 +71,7 @@ class ShortUrlProjectApplicationTests {
         String url = "youtube.com";
 
         //then
-        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("http://localhost:"+port+"/shortUrl")
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("http://localhost:"+port+"/url/shortUrl")
                         .contentType(MediaType.APPLICATION_JSON)
                         .param("url", url) // URL을 쿼리 파라미터로 전달
                 ).andExpect(status().is4xxClientError())
@@ -87,13 +87,13 @@ class ShortUrlProjectApplicationTests {
         String url2 = "https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation/3.2.4";
 
         //then
-        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("http://localhost:"+port+"/shortUrl")
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("http://localhost:"+port+"/url/shortUrl")
                         .contentType(MediaType.APPLICATION_JSON)
                         .param("url", url) // URL을 쿼리 파라미터로 전달
                 ).andExpect(status().isOk())
                 .andReturn();
 
-        MvcResult mvcResult2 = mockMvc.perform(MockMvcRequestBuilders.get("http://localhost:"+port+"/shortUrl")
+        MvcResult mvcResult2 = mockMvc.perform(MockMvcRequestBuilders.get("http://localhost:"+port+"/url/shortUrl")
                         .contentType(MediaType.APPLICATION_JSON)
                         .param("url", url2) // URL을 쿼리 파라미터로 전달
                 ).andExpect(status().isOk())
@@ -129,12 +129,12 @@ class ShortUrlProjectApplicationTests {
         //when
         // 수량 조회 하는 api
 
-        ResultActions resultActions = mockMvc.perform(MockMvcRequestBuilders.get("http://localhost:" + port + "/count")
+        ResultActions resultActions = mockMvc.perform(MockMvcRequestBuilders.get("http://localhost:" + port + "/url/count")
                         .contentType(MediaType.APPLICATION_JSON)
                         .param("url", url))
                 .andExpect(status().isOk());
 
-        ResultActions resultActions1 = mockMvc.perform(MockMvcRequestBuilders.get("http://localhost:" + port + "/count")
+        ResultActions resultActions1 = mockMvc.perform(MockMvcRequestBuilders.get("http://localhost:" + port + "/url/count")
                         .contentType(MediaType.APPLICATION_JSON)
                         .param("url", url2))
                 .andExpect(status().isOk());
