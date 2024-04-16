@@ -1,6 +1,7 @@
 package com.hyujikoh.ShortUrl.domain.url;
 
 import lombok.RequiredArgsConstructor;
+import org.hibernate.validator.constraints.URL;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
@@ -21,7 +22,7 @@ public class Controller {
     }
 
     @GetMapping("/shortUrl")
-    public ResponseEntity<?> postStartApi(@RequestParam String url) {
+    public ResponseEntity<?> postStartApi(@RequestParam @URL String url) {
         String randomUrl = this.service.createRandomUrl(url);
         return ResponseEntity.ok(randomUrl);
     }
