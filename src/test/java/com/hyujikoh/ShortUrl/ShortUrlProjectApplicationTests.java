@@ -49,7 +49,7 @@ class ShortUrlProjectApplicationTests {
     @DisplayName("8자리 랜덤 url 리턴")
     public void startApi() throws Exception {
         //given
-        String url = "google6.com";
+        String url = "https://youtube.com";
 
         //then
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("http://localhost:"+port+"/shortUrl")
@@ -63,13 +63,28 @@ class ShortUrlProjectApplicationTests {
         assertEquals(mvcResult.getResponse().getContentAsString().length(),8);
     }
 
+
+    @Test
+    @DisplayName("정상적인 URL 이 요청에 안왔을때를 대비한 오류 처리")
+    public void notAllowURLApi() throws Exception {
+        //given
+        String url = "youtube.com";
+
+        //then
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("http://localhost:"+port+"/shortUrl")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .param("url", url) // URL을 쿼리 파라미터로 전달
+                ).andExpect(status().is4xxClientError())
+                .andReturn();
+    }
+
     @Test
     @DisplayName("랜덤 키값으로 등록한 url 이 리턴이 되는지")
     public void redirectApi() throws Exception {
         //given
-        String url = "google2.com";
+        String url = "https://youtube.com";
 
-        String url2 = "naver2.com";
+        String url2 = "https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation/3.2.4";
 
         //then
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("http://localhost:"+port+"/shortUrl")
@@ -99,9 +114,9 @@ class ShortUrlProjectApplicationTests {
     @DisplayName("등록된 url이 얼마나 count 가 됐는지 수량 확인 api")
     public void countUrlApi() throws Exception {
         //given
-        String url = "google.com";
+        String url = "https://google.com";
 
-        String url2 = "naver.com";
+        String url2 = "https://naver.com";
 
         for(int i = 0 ; i<29; i++){
             this.service.createRandomUrl(url);
