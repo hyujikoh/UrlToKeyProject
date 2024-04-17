@@ -95,8 +95,9 @@ ShortUrl 서비스는 긴 URL을 짧은 URL로 변환해주는 간단한 웹 서
 
 이런 자료를 참고했어요.
 [1] 네이버 개발자 센터 - 단축 URL 호출 제한 수 문의 (https://developers.naver.com/forum/posts/30939)
-[2] velog - 단축 Url 관리 애플리케이션 만들어보기 1 (https://velog.io/@tilsong/%EB%8B%A8%EC%B6%95-Url-%EC%83%9D%EC%84%B1-%EB%B0%8F-%EA%B4%80%EB%A6%AC-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EB%A7%8C%EB%93%A4%EC%96%B4%EB%B3%B4%EA%B8%B0-1)
-[3] GitHub - Lob-dev/Short-Term: URL을 특정 문자열로 단축하여 제공 ... (https://github.com/Lob-dev/Short-Term)
-[4] 티스토리 - Tiny URL 설계 레퍼런스 - swdream - 티스토리 (https://swengineer7.tistory.com/70)
 
-뤼튼 사용하러 가기 > https://agent.wrtn.ai/5xb91l
+[2] velog - 단축 Url 관리 애플리케이션 만들어보기 1 (https://velog.io/@tilsong/%EB%8B%A8%EC%B6%95-Url-%EC%83%9D%EC%84%B1-%EB%B0%8F-%EA%B4%80%EB%A6%AC-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EB%A7%8C%EB%93%A4%EC%96%B4%EB%B3%B4%EA%B8%B0-1)
+
+[3] GitHub - Lob-dev/Short-Term: URL을 특정 문자열로 단축하여 제공 ... (https://github.com/Lob-dev/Short-Term)
+
+[4] 티스토리 - Tiny URL 설계 레퍼런스 - swdream - 티스토리 (https://swengineer7.tistory.com/70)
