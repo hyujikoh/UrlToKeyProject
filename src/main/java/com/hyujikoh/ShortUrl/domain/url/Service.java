@@ -22,8 +22,8 @@ public class Service {
         return random;
     }
 
-    public String getUrlFromKey(String contentAsString) {
-        return map.get(contentAsString);
+    public String getUrlFromKey(String key) {
+        return map.get(key);
     }
 
     public Long getCountByUrl(String url) {
