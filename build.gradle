@@ -34,6 +34,11 @@ dependencies {
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '3.2.4'
 
 
+
+    implementation 'org.slf4j:slf4j-api:1.7.36'
+    runtimeOnly 'org.tinylog:slf4j-tinylog:2.6.0'
+    implementation 'org.tinylog:tinylog-api:2.6.0'
+    implementation 'org.tinylog:tinylog-impl:2.6.0'
 }
 
 tasks.named('test') {
