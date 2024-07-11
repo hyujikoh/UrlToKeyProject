@@ -13,6 +13,7 @@ import org.tinylog.Logger;
 public class HomeController {
     @GetMapping("")
     public String homeMethod() {
+        Logger.debug("homeMethod");
         return "index.html";
     }
 }
