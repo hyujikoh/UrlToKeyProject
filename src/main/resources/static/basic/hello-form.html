@@ -17,7 +17,7 @@
                 // XMLHttpRequest 객체를 생성
                 var xhr = new XMLHttpRequest();
                 // 요청을 초기화
-                xhr.open("GET", "/url/shortUrl?url=" + encodeURIComponent(url), true);
+                xhr.open("GET", "/url/short-url?url=" + encodeURIComponent(url), true);
                 // 요청이 완료되면 실행될 함수를 설정
                 xhr.onload = function(){
                     // 상태 코드가 400이면 alert를 띄운다
@@ -77,7 +77,7 @@
 </div>
 
 
-<form action="/url/keyUrl" method = "get">
+<form action="/url/key-url" method = "get">
     입력할 키값 <input type="text" name="url" />
     <button type="submit">리다이렉트</button>
 </form>

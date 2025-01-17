@@ -1,18 +1,8 @@
 package com.hyujikoh.ShortUrl.domain.url;
 
 import lombok.RequiredArgsConstructor;
-import org.hibernate.validator.constraints.URL;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.view.RedirectView;
-
-/**
- * Author : hyujikoh
- * CreatedAt : 2024-04-16
- * Desc :
- */
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.validator.constraints.URL;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,7 +23,7 @@ public class Controller {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/shortUrl")
+    @GetMapping("/short-url")
     public ResponseEntity<?> postStartApi(@RequestParam @URL String url) {
         log.info("단축 URL 생성 요청: 입력 URL = {}", url);
         try {
@@ -46,7 +36,7 @@ public class Controller {
         }
     }
 
-    @GetMapping("/keyUrl")
+    @GetMapping("/key-url")
     public RedirectView getStartApi(@RequestParam String url) {
         log.info("원본 URL 조회 요청: 키 = {}", url);
         try {
