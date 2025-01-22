@@ -10,10 +10,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.view.RedirectView;
 
-@Slf4j
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("url")
+@Slf4j
 public class Controller {
     private final Service service;
 

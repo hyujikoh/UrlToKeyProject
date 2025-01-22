@@ -2,10 +2,8 @@ package com.hyujikoh.ShortUrl.domain.url;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 
 /**
  * Author : hyujikoh
